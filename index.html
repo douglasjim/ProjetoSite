@@ -12,22 +12,22 @@
 <body>
 
 	<header>
-		<div class="navbar-fixed">
+		<div class="navbar-fixed" id="home">
 		<nav class="nav_bar z-depth-0">
 			<div class="nav-wrapper container">
 				<h1 class="logo_text">Centro boa forma  - seu Espaco de saude</h1>
 				<a href=""><img class="logo_img" src="img/logo.png" alt="Centro boa forma"></a>
 
 				<ul class="right light hide-on-med-and-down">
-					<li><a href="">Home</a></li>
-					<li><a href="">Sobre o Boa forma</a></li>
-					<li><a href="">Servicos</a></li>
-					<li><a href="">Unidades</a></li>
-					<li><a href="">Contato</a></li>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#sobre">Sobre o Boa forma</a></li>
+					<li><a href="#servicos">Servicos</a></li>
+					<li><a href="#unidades">Unidades</a></li>
+					<li><a href="#contato">Contato</a></li>
 				</ul>
 
 				<!-- 
-					
+				
 				-->
 
 				
@@ -50,17 +50,29 @@
 		
 	</section>
 
-	<section class="sobre bloco">
+	<section class="sobre bloco" id="sobre">
 		<div class="row container">
-			<div class="col s12">
-				<h2 class="light">Sobre nos</h2>
+			<div class="col s12 center">
+				<h2 class="light texto-justificado">Sobre nos</h2>
 				
 			</div>
-			<div class="col s12 l6">
-				
+			<div class="col s12 l6" onscroll="teste()" style="overflow: scroll;">
+				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
 			</div>
 
 			<div class="col s12 l6">
+				<div class="col s12 l6 mySlides"><a href="#" class="carousel-tem"><img src="img/banner-01.jpg" alt="teste"></a></div>
+				<div class="mySlides"><a href="#" class="carousel-tem"><img src="img/banner-02.jpg" alt="teste2"></a></div>
+				<div class="mySlides"><a href="#" class="carousel-tem"><img src="img/banner-03.jpg" alt="teste3"></a></div>
+				<div class="mySlides"><a href="#" class="carousel-tem"><img src="img/banner-04.jpg" alt="teste4"></a></div>
+			</div>
+			
+		</div>
+		<div class="row blue-logo">
+			<div class="container">
+				<article class="item">
+					
+				</article>
 				
 			</div>
 			
@@ -71,15 +83,48 @@
 
 
 <script type="text/javascript" src="js/materialize"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script type="text/javascript"></script>
 
 <script>
-     $( document ).ready(function(){
-     $(".button-collapse").sideNav();
-   })
- </script>
+
+	window.addEventListener('scroll',() => {
+		const teste2 = document.querySelector('.nav_bar')
+		
+		const teste = window.scrollY;
+		console.log(teste)
+		if(teste >= 717){
+			console.log("o=chegou")
+			teste2.classList.add('nav-color')
+		}else{
+			teste2.classList.remove('nav-color')
+		}
+
+	})
+
+
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none";  
+	  }
+	  slideIndex++;
+	  if (slideIndex > slides.length) {slideIndex = 1}    
+	  
+	  slides[slideIndex-1].style.display = "block";  
+	  
+	  setTimeout(showSlides, 2000); // Change image every 2 seconds
+	}	
+
+
+
+</script>
 
 
 </body>

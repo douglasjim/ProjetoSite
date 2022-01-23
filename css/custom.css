@@ -2,6 +2,10 @@ html, body {
 	height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bloco{
 	min-height: 100%;
 	padding-top: 94px;
@@ -38,6 +42,11 @@ html, body {
 	color: #2dc7d0;
 }
 
+.nav-color{
+	background-color: black;
+	transition: background 0.5s linear;
+}
+
 .logo_text{
 	font-size: 0;
 	margin: 0;
@@ -67,6 +76,30 @@ nav.nav-extended .nav-wrapper{
 	height: auto;
 }
 
+.sobre{
+	background-image: url(../img/textura1.png);
+}
+
+.sobre h2{
+	font-size: 2rem;
+	color: #212121;
+	text-transform: uppercase;
+}
+
+.sobre h2::after{
+	content: "";
+	display: block;
+	width: 100px;
+	border-top: 1px solid #2dc7d0;
+	margin: 15px auto;
+
+}
+
+/*Arrumando o texto usamos essas opcoes abaixo */
+.sobre p{
+	line-height: 1.8rem;
+	text-align: justify;
+}
 
 
 @media(max-width: 318px){
@@ -93,13 +126,19 @@ nav.nav-extended .nav-wrapper{
 @media only screen and (min-width: 601px) {
 	.banner h2{
   	font-size: 4rem;
-  }	  
+  }
+  .container{
+  	width: 85%;
+  }
 }
 
 /* para desktop */
 @media only screen and (min-width: 993px) {
 	.banner h2{
   	font-size: 5rem;
+  }
+  .container{
+  	width: 90%;
   }
 }
 
